@@ -1,818 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shop online for electronics, fashion, home & kitchen, books, sports and more. Get best deals with up to 70% off. Free delivery on eligible orders.">
-    <title>Amazon.in: Online Shopping India - Buy Electronics, Fashion, Home & Kitchen</title>
-    <link rel="canonical" href="https://vashujoshi1-cmd.github.io/amazon-affiliate-store/">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Amazon Ember', Arial, sans-serif;
-            background: #EAEDED;
-        }
-        
-        .header {
-            background: #131921;
-            color: white;
-            padding: 0;
-        }
-        
-        .header-top {
-            display: flex;
-            align-items: center;
-            padding: 10px 20px;
-            gap: 20px;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            border: 1px solid transparent;
-        }
-        
-        .logo:hover {
-            border: 1px solid white;
-        }
-        
-        .search-bar {
-            flex: 1;
-            display: flex;
-            max-width: 800px;
-        }
-        
-        .search-bar select {
-            padding: 10px;
-            border: none;
-            background: #F3F3F3;
-            border-radius: 4px 0 0 4px;
-        }
-        
-        .search-bar input {
-            flex: 1;
-            padding: 10px;
-            border: none;
-            outline: none;
-        }
-        
-        .search-bar button {
-            padding: 10px 20px;
-            background: #FEBD69;
-            border: none;
-            border-radius: 0 4px 4px 0;
-            cursor: pointer;
-        }
-        
-        .search-bar button:hover {
-            background: #F3A847;
-        }
-        
-        .header-nav {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
-        
-        .nav-item {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            border: 1px solid transparent;
-            font-size: 14px;
-        }
-        
-        .nav-item:hover {
-            border: 1px solid white;
-        }
-        
-        .header-bottom {
-            background: #232F3E;
-            padding: 10px 20px;
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-        }
-        
-        .category-link {
-            color: white;
-            text-decoration: none;
-            white-space: nowrap;
-            font-size: 14px;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        
-        .category-link:hover {
-            text-decoration: underline;
-        }
-        
-        .container {
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        .main-layout {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .sidebar {
-            width: 260px;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            height: fit-content;
-            position: sticky;
-            top: 20px;
-        }
-        
-        .sidebar h3 {
-            font-size: 16px;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .filter-section {
-            margin-bottom: 20px;
-        }
-        
-        .filter-section h4 {
-            font-size: 14px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-        
-        .filter-option {
-            display: flex;
-            align-items: center;
-            margin: 8px 0;
-            font-size: 13px;
-        }
-        
-        .filter-option input {
-            margin-right: 8px;
-        }
-        
-        .filter-option label {
-            cursor: pointer;
-            color: #007185;
-        }
-        
-        .filter-option label:hover {
-            color: #C7511F;
-            text-decoration: underline;
-        }
-        
-        .price-inputs {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .price-inputs input {
-            width: 80px;
-            padding: 5px;
-            border: 1px solid #888;
-            border-radius: 3px;
-        }
-        
-        .price-inputs button {
-            padding: 5px 10px;
-            background: #F0F2F2;
-            border: 1px solid #888;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        
-        .clear-filters {
-            background: white;
-            color: #007185;
-            border: 1px solid #007185;
-            padding: 8px 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            width: 100%;
-            margin-top: 15px;
-        }
-        
-        .clear-filters:hover {
-            background: #007185;
-            color: white;
-        }
-        
-        .content-area {
-            flex: 1;
-        }
-        
-        .results-bar {
-            background: white;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .results-count {
-            font-size: 14px;
-        }
-        
-        .sort-dropdown select {
-            padding: 8px 30px 8px 10px;
-            border: 1px solid #D5D9D9;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-        }
-        
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        
-        .product-card {
-            background: white;
-            border-radius: 8px;
-            padding: 15px;
-            transition: all 0.3s;
-            cursor: pointer;
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .product-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transform: translateY(-2px);
-        }
-        
-        .badge {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: #CC0C39;
-            color: white;
-            padding: 4px 8px;
-            border-radius: 3px;
-            font-size: 11px;
-            font-weight: 600;
-            z-index: 1;
-        }
-        
-        .badge.deal {
-            background: #007600;
-        }
-        
-        .badge.limited {
-            background: #B12704;
-        }
-        
-        .product-image {
-            width: 100%;
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 10px;
-            position: relative;
-            background: white;
-        }
-        
-        .product-image img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-        
-        .sponsored {
-            font-size: 11px;
-            color: #565959;
-            margin-bottom: 5px;
-        }
-        
-        .product-title {
-            font-size: 14px;
-            color: #0F1111;
-            margin-bottom: 8px;
-            line-height: 1.4;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            min-height: 40px;
-        }
-        
-        .product-title:hover {
-            color: #C7511F;
-        }
-        
-        .rating {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 8px;
-        }
-        
-        .stars {
-            color: #FFA41C;
-            font-size: 14px;
-        }
-        
-        .rating-count {
-            color: #007185;
-            font-size: 12px;
-        }
-        
-        .rating-count:hover {
-            color: #C7511F;
-            text-decoration: underline;
-        }
-        
-        .price-section {
-            margin-bottom: 8px;
-        }
-        
-        .price {
-            font-size: 24px;
-            color: #0F1111;
-        }
-        
-        .price-symbol {
-            font-size: 14px;
-            vertical-align: super;
-        }
-        
-        .original-price {
-            color: #565959;
-            text-decoration: line-through;
-            font-size: 13px;
-            margin-left: 5px;
-        }
-        
-        .discount {
-            color: #CC0C39;
-            font-size: 13px;
-            margin-left: 5px;
-        }
-        
-        .prime {
-            color: #007185;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        
-        .delivery {
-            font-size: 12px;
-            color: #007600;
-            margin-bottom: 10px;
-        }
-        
-        .buy-button {
-            background: #FFD814;
-            border: 1px solid #FCD200;
-            border-radius: 8px;
-            padding: 8px;
-            text-align: center;
-            cursor: pointer;
-            font-size: 13px;
-            margin-top: auto;
-            text-decoration: none;
-            color: #0F1111;
-            display: block;
-        }
-        
-        .buy-button:hover {
-            background: #F7CA00;
-        }
-        
-        .footer {
-            background: #232F3E;
-            color: white;
-            padding: 40px 20px;
-            margin-top: 40px;
-            text-align: center;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .footer-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 768px) {
-            .main-layout {
-                flex-direction: column;
-            }
-            
-            .sidebar {
-                width: 100%;
-                position: relative;
-            }
-            
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-            
-            .header-top {
-                flex-wrap: wrap;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <title>Vashu Amazon Affiliate Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f3f4f6;
+      color: #111827;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1d4ed8);
+      color: #fff;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .logo span {
+      color: #fde047;
+    }
+
+    .tagline {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 16px auto 40px;
+      padding: 0 12px;
+    }
+
+    .top-bar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .search-box {
+      display: flex;
+      gap: 8px;
+      flex: 1;
+    }
+
+    .search-box input {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      outline: none;
+    }
+
+    .search-box button {
+      padding: 8px 14px;
+      border-radius: 8px;
+      border: none;
+      background: #1d4ed8;
+      color: #fff;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .category-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .category-tab {
+      padding: 6px 12px;
+      border-radius: 999px;
+      border: 1px solid #d1d5db;
+      background: #fff;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+
+    .category-tab.active {
+      background: #1d4ed8;
+      color: #fff;
+      border-color: #1d4ed8;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 640px) {
+      .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    .product-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .product-card img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      aspect-ratio: 4 / 3;
+      background: #e5e7eb;
+    }
+
+    .product-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      min-height: 42px;
+    }
+
+    .rating {
+      font-size: 0.8rem;
+      color: #f59e0b;
+    }
+
+    .price {
+      font-weight: 700;
+      color: #16a34a;
+      font-size: 0.95rem;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      background: #eff6ff;
+      color: #1d4ed8;
+      padding: 2px 8px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-top: -2px;
+    }
+
+    .btn {
+      margin-top: auto;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: none;
+      background: #f97316;
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      max-width: 1200px;
+      margin: 10px auto 30px;
+      padding: 0 12px;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+
+    .disclaimer {
+      margin-top: 6px;
+      font-size: 0.75rem;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="header-top">
-            <a href="https://vashujoshi1-cmd.github.io/amazon-affiliate-store/" class="logo">amazon.in</a>
-            
-            <div class="search-bar">
-                <select id="categorySelect">
-                    <option value="">All</option>
-                    <option value="Electronics">Electronics</option>
-                    <option value="Fashion">Fashion</option>
-                    <option value="Home">Home & Kitchen</option>
-                    <option value="Books">Books</option>
-                    <option value="Sports">Sports</option>
-                </select>
-                <input type="text" id="searchInput" placeholder="Search Amazon.in" onkeyup="handleSearch()">
-                <button onclick="handleSearch()">🔍</button>
-            </div>
-            
-            <div class="header-nav">
-                <a href="#" class="nav-item">Hello, Sign in<br><strong>Account & Lists</strong></a>
-                <a href="#" class="nav-item">Returns<br><strong>& Orders</strong></a>
-                <a href="#" class="nav-item">🛒 Cart</a>
-            </div>
-        </div>
-        
-        <div class="header-bottom">
-            <a class="category-link" onclick="filterByCategory('all'); return false;">All</a>
-            <a class="category-link" onclick="filterByCategory('Electronics'); return false;">Electronics</a>
-            <a class="category-link" onclick="filterByCategory('Fashion'); return false;">Fashion</a>
-            <a class="category-link" onclick="filterByCategory('Home'); return false;">Home & Kitchen</a>
-            <a class="category-link" onclick="filterByCategory('Books'); return false;">Books</a>
-            <a class="category-link" onclick="filterByCategory('Sports'); return false;">Sports & Fitness</a>
-            <a class="category-link" href="#">Today's Deals</a>
-            <a class="category-link" href="#">Customer Service</a>
-        </div>
-    </header>
+  <header>
+    <div>
+      <div class="logo">Vashu <span>Store</span></div>
+      <div class="tagline">Best picks from Amazon India (Affiliate Store)</div>
+    </div>
+  </header>
 
-    <div class="container">
-        <div class="main-layout">
-            <aside class="sidebar">
-                <h3>Filters</h3>
-                
-                <div class="filter-section">
-                    <h4>Department</h4>
-                    <div class="filter-option">
-                        <input type="checkbox" id="cat-electronics" value="Electronics" onchange="applyFilters()">
-                        <label for="cat-electronics">Electronics</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="cat-fashion" value="Fashion" onchange="applyFilters()">
-                        <label for="cat-fashion">Fashion</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="cat-home" value="Home" onchange="applyFilters()">
-                        <label for="cat-home">Home & Kitchen</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="cat-books" value="Books" onchange="applyFilters()">
-                        <label for="cat-books">Books</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="cat-sports" value="Sports" onchange="applyFilters()">
-                        <label for="cat-sports">Sports & Fitness</label>
-                    </div>
-                </div>
-                
-                <div class="filter-section">
-                    <h4>Customer Review</h4>
-                    <div class="filter-option">
-                        <input type="checkbox" id="rating-4" value="4" onchange="applyFilters()">
-                        <label for="rating-4">⭐⭐⭐⭐ & Up</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="rating-3" value="3" onchange="applyFilters()">
-                        <label for="rating-3">⭐⭐⭐ & Up</label>
-                    </div>
-                </div>
-                
-                <div class="filter-section">
-                    <h4>Price</h4>
-                    <div class="filter-option">
-                        <input type="checkbox" value="0-500" onchange="applyFilters()">
-                        <label>Under ₹500</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" value="500-1000" onchange="applyFilters()">
-                        <label>₹500 - ₹1,000</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" value="1000-2000" onchange="applyFilters()">
-                        <label>₹1,000 - ₹2,000</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" value="2000-5000" onchange="applyFilters()">
-                        <label>₹2,000 - ₹5,000</label>
-                    </div>
-                    <div class="price-inputs">
-                        <input type="number" id="minPrice" placeholder="Min">
-                        <input type="number" id="maxPrice" placeholder="Max">
-                        <button onclick="applyFilters()">Go</button>
-                    </div>
-                </div>
-                
-                <button class="clear-filters" onclick="clearFilters()">Clear All Filters</button>
-            </aside>
-            
-            <div class="content-area">
-                <div class="results-bar">
-                    <div class="results-count">
-                        <span id="resultCount">100</span> results
-                    </div>
-                    <div class="sort-dropdown">
-                        <select id="sortSelect" onchange="sortProducts()">
-                            <option value="featured">Featured</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="rating">Avg. Customer Review</option>
-                        </select>
-                    </div>
-                </div>
-                
-                <div class="products-grid" id="productsGrid"></div>
-            </div>
-        </div>
+  <main>
+    <div class="top-bar">
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search product in this page (earbuds, shoes, bottle...)"
+        />
+        <button onclick="applyFilters()">Search</button>
+      </div>
+
+      <div class="category-tabs">
+        <button class="category-tab active" data-category="all" onclick="setCategory('all', this)">
+          All
+        </button>
+        <button class="category-tab" data-category="electronics" onclick="setCategory('electronics', this)">
+          Electronics
+        </button>
+        <button class="category-tab" data-category="fashion" onclick="setCategory('fashion', this)">
+          Fashion
+        </button>
+        <button class="category-tab" data-category="home" onclick="setCategory('home', this)">
+          Home &amp; Kitchen
+        </button>
+        <button class="category-tab" data-category="books" onclick="setCategory('books', this)">
+          Books
+        </button>
+        <button class="category-tab" data-category="sports" onclick="setCategory('sports', this)">
+          Sports &amp; Fitness
+        </button>
+      </div>
     </div>
 
-    <footer class="footer">
-        <div class="footer-links">
-            <a href="#">About Us</a>
-            <a href="#">Careers</a>
-            <a href="#">Sell on Amazon</a>
-            <a href="#">Help</a>
+    <div class="grid" id="productGrid">
+      <!-- Electronics -->
+      <div class="product-card" data-category="electronics" data-title="boAt Airdopes 141 Bluetooth Truly Wireless in Ear Earbuds">
+        <img src="https://via.placeholder.com/400x300?text=boAt+Airdopes+141" alt="boAt Airdopes 141 Earbuds" />
+        <div class="product-title">
+          boAt Airdopes 141 Bluetooth Truly Wireless in Ear Earbuds with ENx Tech, 42H Playtime
         </div>
-        <p style="margin-top: 20px; font-size: 12px;">
-            © 1996-2024, Amazon.com, Inc. or its affiliates | As an Amazon Associate, I earn from qualifying purchases.
-        </p>
-    </footer>
+        <div class="rating">⭐⭐⭐⭐☆ (4.0+)</div>
+        <div class="price">₹899–₹1,299</div>
+        <span class="tag">Best seller • Electronics</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Airdopes-141-Bluetooth-Wireless-Playtime/dp/B09N3ZLB3T?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
 
-    <script>
-        const associateId = 'vashustore0b-21';
-        
-        const products = [
-            // Electronics
-            {category: 'Electronics', brand: 'Boat', title: 'boAt Rockerz 450 Bluetooth Headphones with Mic, Upto 15 Hours Playback', price: 1299, originalPrice: 2990, rating: 4.1, reviews: 234567, image: 'https://images-na.ssl-images-amazon.com/images/I/61CGHv6kmWL._AC_SL1500_.jpg', search: 'boat+rockerz+450+bluetooth+headphones', badge: 'bestseller'},
-            {category: 'Electronics', brand: 'Samsung', title: 'Samsung Galaxy M14 5G (Smoky Silver, 6GB, 128GB) 50MP Camera', price: 12990, originalPrice: 18490, rating: 4.2, reviews: 45678, image: 'https://images-na.ssl-images-amazon.com/images/I/81f55uHDfPL._AC_SL1500_.jpg', search: 'samsung+galaxy+m14+5g', badge: 'deal'},
-            {category: 'Electronics', brand: 'Boat', title: 'boAt Airdopes 141 Bluetooth Truly Wireless in Ear Earbuds', price: 1299, originalPrice: 4990, rating: 4.0, reviews: 156789, image: 'https://images-na.ssl-images-amazon.com/images/I/51HBom7tW-L._AC_SL1500_.jpg', search: 'boat+airdopes+141+wireless+earbuds', badge: 'bestseller'},
-            {category: 'Electronics', brand: 'OnePlus', title: 'OnePlus Nord CE 3 Lite 5G (Pastel Lime, 8GB RAM, 128GB)', price: 17999, originalPrice: 21999, rating: 4.3, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/61QRgOgBx0L._AC_SL1500_.jpg', search: 'oneplus+nord+ce+3+lite+5g', badge: ''},
-            {category: 'Electronics', brand: 'Mi', title: 'Mi Power Bank 3i 20000mAh Lithium Polymer 18W Fast Charging', price: 1799, originalPrice: 2499, rating: 4.4, reviews: 89012, image: 'https://images-na.ssl-images-amazon.com/images/I/41Smfb0BqjL._AC_SL1500_.jpg', search: 'mi+power+bank+20000mah', badge: 'deal'},
-            {category: 'Electronics', brand: 'Logitech', title: 'Logitech M331 Silent Plus Wireless Mouse, 2.4GHz', price: 795, originalPrice: 1495, rating: 4.3, reviews: 67890, image: 'https://images-na.ssl-images-amazon.com/images/I/51h3VNYdITL._AC_SL1500_.jpg', search: 'logitech+m331+wireless+mouse', badge: ''},
-            {category: 'Electronics', brand: 'HP', title: 'HP v236w 32GB USB 2.0 Pen Drive (Silver)', price: 349, originalPrice: 650, rating: 4.2, reviews: 123456, image: 'https://images-na.ssl-images-amazon.com/images/I/31VcPFLLiuL._AC_SL1500_.jpg', search: 'hp+32gb+usb+pen+drive', badge: 'limited'},
-            {category: 'Electronics', brand: 'Sony', title: 'Sony WH-CH520 Wireless On-Ear Bluetooth Headphones', price: 2990, originalPrice: 4990, rating: 4.3, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/41fV7FkdqeL._AC_SL1500_.jpg', search: 'sony+wh-ch520+wireless+headphones', badge: 'bestseller'},
-            {category: 'Electronics', brand: 'JBL', title: 'JBL Go 3 Portable Bluetooth Speaker with Pro Sound', price: 2799, originalPrice: 3999, rating: 4.4, reviews: 56789, image: 'https://images-na.ssl-images-amazon.com/images/I/61O1objJJeL._AC_SL1500_.jpg', search: 'jbl+go+3+bluetooth+speaker', badge: 'deal'},
-            {category: 'Electronics', brand: 'Zebronics', title: 'Zebronics Zeb-Transformer-K USB Gaming Keyboard RGB', price: 599, originalPrice: 999, rating: 4.0, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/71dA6+d-XML._AC_SL1500_.jpg', search: 'zebronics+gaming+keyboard+rgb', badge: ''},
-            {category: 'Electronics', brand: 'Logitech', title: 'Logitech C270 HD Webcam, HD 720p/30fps Video Calling', price: 1795, originalPrice: 2495, rating: 4.3, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/51h-1qQFwBL._AC_SL1500_.jpg', search: 'logitech+c270+hd+webcam', badge: 'bestseller'},
-            {category: 'Electronics', brand: 'SanDisk', title: 'SanDisk Ultra 128GB microSDXC UHS-I Card', price: 899, originalPrice: 1600, rating: 4.4, reviews: 234567, image: 'https://images-na.ssl-images-amazon.com/images/I/61YGxGKUZlL._AC_SL1500_.jpg', search: 'sandisk+128gb+microsd+card', badge: 'deal'},
-            {category: 'Electronics', brand: 'Realme', title: 'realme Buds 2 Wired in Ear Earphones with Mic', price: 399, originalPrice: 599, rating: 4.2, reviews: 89012, image: 'https://images-na.ssl-images-amazon.com/images/I/51HBom7tW-L._AC_SL1500_.jpg', search: 'realme+buds+2+wired+earphones', badge: ''},
-            {category: 'Electronics', brand: 'TP-Link', title: 'TP-Link Archer C6 Gigabit MU-MIMO Wireless Router', price: 1799, originalPrice: 2999, rating: 4.3, reviews: 45678, image: 'https://images-na.ssl-images-amazon.com/images/I/41Smfb0BqjL._AC_SL1500_.jpg', search: 'tp-link+archer+c6+router', badge: 'bestseller'},
-            {category: 'Electronics', brand: 'Ambrane', title: 'Ambrane 10000mAh Li-Polymer Powerbank Fast Charging', price: 699, originalPrice: 1499, rating: 4.0, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/41Smfb0BqjL._AC_SL1500_.jpg', search: 'ambrane+10000mah+power+bank', badge: 'deal'},
-            {category: 'Electronics', brand: 'Portronics', title: 'Portronics Konnect L 1.2M Fast Charging Cable', price: 199, originalPrice: 399, rating: 4.2, reviews: 78901, image: 'https://images-na.ssl-images-amazon.com/images/I/51VqYt7AICL._AC_SL1500_.jpg', search: 'portronics+fast+charging+cable', badge: ''},
-            {category: 'Electronics', brand: 'Amazon Basics', title: 'Amazon Basics HDMI Cable 6 Feet - Supports 4K@60Hz', price: 299, originalPrice: 599, rating: 4.3, reviews: 56789, image: 'https://images-na.ssl-images-amazon.com/images/I/41VqYt7AICL._AC_SL1500_.jpg', search: 'amazon+basics+hdmi+cable', badge: 'bestseller'},
-            {category: 'Electronics', brand: 'Zebronics', title: 'Zebronics Zeb-Companion Wireless Bluetooth Speaker', price: 899, originalPrice: 1999, rating: 4.0, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/61O1objJJeL._AC_SL1500_.jpg', search: 'zebronics+bluetooth+speaker', badge: ''},
-            {category: 'Electronics', brand: 'Portronics', title: 'Portronics Harmonics Twins S3 TWS Earbuds', price: 999, originalPrice: 2499, rating: 4.1, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/51HBom7tW-L._AC_SL1500_.jpg', search: 'portronics+tws+earbuds', badge: ''},
-            {category: 'Electronics', brand: 'Zebronics', title: 'Zebronics Zeb-Transformer Wired USB Gaming Mouse', price: 399, originalPrice: 799, rating: 4.0, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/51h3VNYdITL._AC_SL1500_.jpg', search: 'zebronics+gaming+mouse', badge: ''},
+      <div class="product-card" data-category="electronics" data-title="Noise ColorFit Pro 5 Smart Watch">
+        <img src="https://via.placeholder.com/400x300?text=Noise+ColorFit+Pro+5" alt="Noise ColorFit Pro 5 Smartwatch" />
+        <div class="product-title">
+          Noise ColorFit Pro 5 Smartwatch 1.85&quot; AMOLED Display, BT Calling, DIY Watch Faces
+        </div>
+        <div class="rating">⭐⭐⭐⭐☆ (4.0+)</div>
+        <div class="price">₹2,500–₹3,500</div>
+        <span class="tag">Trending • Electronics</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Noise-Biggest-Personalization-Productivity-Midnight/dp/B0CFYNNBQX?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
 
-            // Fashion
-            {category: 'Fashion', brand: 'Levi\'s', title: 'Levi\'s Men\'s Regular Fit Jeans', price: 1799, originalPrice: 3199, rating: 4.2, reviews: 45678, image: 'https://images-na.ssl-images-amazon.com/images/I/71VncILnH9L._AC_UL1500_.jpg', search: 'levis+mens+jeans', badge: 'bestseller'},
-            {category: 'Fashion', brand: 'Nike', title: 'Nike Men\'s Revolution 6 Running Shoes', price: 3495, originalPrice: 5995, rating: 4.3, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_UL1500_.jpg', search: 'nike+revolution+6+running+shoes', badge: 'deal'},
-            {category: 'Fashion', brand: 'Adidas', title: 'Adidas Men\'s Plain Regular Fit T-Shirt', price: 699, originalPrice: 1299, rating: 4.1, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/61pglWl7oYL._AC_UL1500_.jpg', search: 'adidas+mens+tshirt', badge: ''},
-            {category: 'Fashion', brand: 'Puma', title: 'Puma Unisex-Adult Backpack', price: 1199, originalPrice: 2499, rating: 4.2, reviews: 12345, image: 'https://images-na.ssl-images-amazon.com/images/I/81D+3kWUeaL._AC_UL1500_.jpg', search: 'puma+backpack', badge: 'bestseller'},
-            {category: 'Fashion', brand: 'Titan', title: 'Titan Men\'s Analog Watch', price: 2495, originalPrice: 4995, rating: 4.4, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/71VncILnH9L._AC_UL1500_.jpg', search: 'titan+mens+watch', badge: 'deal'},
-            {category: 'Fashion', brand: 'Fastrack', title: 'Fastrack UV Protected Wayfarer Sunglasses', price: 799, originalPrice: 1495, rating: 4.0, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/61pglWl7oYL._AC_UL1500_.jpg', search: 'fastrack+sunglasses', badge: ''},
-            {category: 'Fashion', brand: 'Lavie', title: 'Lavie Women Handbag', price: 1599, originalPrice: 3199, rating: 4.2, reviews: 12345, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_UL1500_.jpg', search: 'lavie+women+handbag', badge: 'bestseller'},
-            {category: 'Fashion', brand: 'Wildcraft', title: 'Wildcraft Unisex Polyester Backpack', price: 1399, originalPrice: 2799, rating: 4.3, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/81D+3kWUeaL._AC_UL1500_.jpg', search: 'wildcraft+backpack', badge: ''},
-            {category: 'Fashion', brand: 'Bata', title: 'Bata Men\'s Formal Shoes', price: 1299, originalPrice: 2499, rating: 4.0, reviews: 12345, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_UL1500_.jpg', search: 'bata+mens+formal+shoes', badge: ''},
-            {category: 'Fashion', brand: 'Sparx', title: 'Sparx Men\'s Running Shoes', price: 899, originalPrice: 1799, rating: 4.1, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_UL1500_.jpg', search: 'sparx+running+shoes', badge: 'bestseller'},
+      <!-- Fashion -->
+      <div class="product-card" data-category="fashion" data-title="Men's Regular Fit Cotton T-Shirt">
+        <img src="https://via.placeholder.com/400x300?text=Mens+Cotton+T-Shirt" alt="Men's Regular Fit Cotton T-Shirt" />
+        <div class="product-title">
+          Men's Regular Fit Cotton T-Shirt (Multiple Colours)
+        </div>
+        <div class="rating">⭐⭐⭐⭐☆ (4.0+)</div>
+        <div class="price">₹300–₹700</div>
+        <span class="tag">Popular • Fashion</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Mens-Regular-Fit-Cotton-T-Shirt/dp/B08L1CDTT1?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
 
-            // Home & Kitchen
-            {category: 'Home', brand: 'Prestige', title: 'Prestige Popular Plus Aluminium Pressure Cooker, 3 Litres', price: 1299, originalPrice: 2295, rating: 4.4, reviews: 67890, image: 'https://images-na.ssl-images-amazon.com/images/I/71VncILnH9L._AC_SL1500_.jpg', search: 'prestige+pressure+cooker+3+litre', badge: 'bestseller'},
-            {category: 'Home', brand: 'Pigeon', title: 'Pigeon Favourite Induction Base Aluminium Cookware Set', price: 1999, originalPrice: 3999, rating: 4.2, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/71VncILnH9L._AC_SL1500_.jpg', search: 'pigeon+cookware+set', badge: 'deal'},
-            {category: 'Home', brand: 'Milton', title: 'Milton Thermosteel Flip Lid Flask, 1000 ml', price: 699, originalPrice: 1350, rating: 4.3, reviews: 89012, image: 'https://images-na.ssl-images-amazon.com/images/I/61Iq+4GKRSL._AC_SL1500_.jpg', search: 'milton+flask+1000ml', badge: 'bestseller'},
-            {category: 'Home', brand: 'Cello', title: 'Cello Checkers Plastic Lunch Box Set, 4-Pieces', price: 299, originalPrice: 599, rating: 4.1, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_SL1500_.jpg', search: 'cello+lunch+box+set', badge: ''},
-            {category: 'Home', brand: 'Philips', title: 'Philips HL7756/00 Mixer Grinder, 750W, 3 Jars', price: 3999, originalPrice: 7995, rating: 4.4, reviews: 45678, image: 'https://images-na.ssl-images-amazon.com/images/I/61Iq+4GKRSL._AC_SL1500_.jpg', search: 'philips+mixer+grinder+750w', badge: 'deal'},
-            {category: 'Home', brand: 'Bajaj', title: 'Bajaj Rex 500-Watt Mixer Grinder with 3 Jars', price: 1999, originalPrice: 3995, rating: 4.2, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/61Iq+4GKRSL._AC_SL1500_.jpg', search: 'bajaj+rex+mixer+grinder', badge: 'bestseller'},
-            {category: 'Home', brand: 'Prestige', title: 'Prestige IRIS 750 Watt Mixer Grinder', price: 2499, originalPrice: 4995, rating: 4.3, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/61Iq+4GKRSL._AC_SL1500_.jpg', search: 'prestige+iris+mixer+grinder', badge: ''},
-            {category: 'Home', brand: 'Butterfly', title: 'Butterfly Premium Vegetable Chopper 900 ml', price: 399, originalPrice: 799, rating: 4.1, reviews: 12345, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_SL1500_.jpg', search: 'butterfly+vegetable+chopper', badge: 'deal'},
-            {category: 'Home', brand: 'Pigeon', title: 'Pigeon Amaze Plus Electric Kettle', price: 699, originalPrice: 1395, rating: 4.2, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/61Iq+4GKRSL._AC_SL1500_.jpg', search: 'pigeon+electric+kettle', badge: 'bestseller'},
-            {category: 'Home', brand: 'Prestige', title: 'Prestige PIC 20 1600-Watt Induction Cooktop', price: 2199, originalPrice: 4395, rating: 4.3, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/51Iq+4GKRSL._AC_SL1500_.jpg', search: 'prestige+induction+cooktop', badge: ''},
+      <div class="product-card" data-category="fashion" data-title="Shoetopia Women's Casual Sneakers">
+        <img src="https://via.placeholder.com/400x300?text=Women+Sneakers" alt="Women's Casual Sneakers" />
+        <div class="product-title">
+          Shoetopia Women Smart High Top Casual Lace-up Sneakers
+        </div>
+        <div class="rating">⭐⭐⭐⭐☆ (4.0 approx)</div>
+        <div class="price">₹600–₹1,200</div>
+        <span class="tag">Top pick • Fashion</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Shoetopia-JM-Top-Multi-Women-Sneaker-Shoes/dp/B0DGGQRJKT?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
 
-            // Books
-            {category: 'Books', brand: 'Penguin', title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits', price: 399, originalPrice: 599, rating: 4.6, reviews: 123456, image: 'https://images-na.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_SL1500_.jpg', search: 'atomic+habits+book', badge: 'bestseller'},
-            {category: 'Books', brand: 'Harper Collins', title: 'The Psychology of Money by Morgan Housel', price: 299, originalPrice: 450, rating: 4.5, reviews: 89012, image: 'https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL._AC_SL1500_.jpg', search: 'psychology+of+money+book', badge: 'bestseller'},
-            {category: 'Books', brand: 'Rupa', title: 'Rich Dad Poor Dad: What the Rich Teach Their Kids', price: 299, originalPrice: 450, rating: 4.4, reviews: 67890, image: 'https://images-na.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_SL1500_.jpg', search: 'rich+dad+poor+dad+book', badge: 'deal'},
-            {category: 'Books', brand: 'Penguin', title: 'Ikigai: The Japanese Secret to a Long and Happy Life', price: 249, originalPrice: 399, rating: 4.5, reviews: 45678, image: 'https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL._AC_SL1500_.jpg', search: 'ikigai+book', badge: 'bestseller'},
-            {category: 'Books', brand: 'Westland', title: 'Do Epic Shit by Ankur Warikoo', price: 299, originalPrice: 399, rating: 4.6, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_SL1500_.jpg', search: 'do+epic+shit+book', badge: ''},
-            {category: 'Books', brand: 'Penguin', title: 'The Alchemist by Paulo Coelho', price: 249, originalPrice: 350, rating: 4.5, reviews: 89012, image: 'https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL._AC_SL1500_.jpg', search: 'the+alchemist+book', badge: 'bestseller'},
-            {category: 'Books', brand: 'Rupa', title: 'The Monk Who Sold His Ferrari', price: 199, originalPrice: 299, rating: 4.4, reviews: 56789, image: 'https://images-na.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_SL1500_.jpg', search: 'monk+who+sold+ferrari+book', badge: 'deal'},
-            {category: 'Books', brand: 'Penguin', title: 'Think and Grow Rich by Napoleon Hill', price: 199, originalPrice: 299, rating: 4.5, reviews: 45678, image: 'https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL._AC_SL1500_.jpg', search: 'think+and+grow+rich+book', badge: ''},
-            {category: 'Books', brand: 'Harper Collins', title: 'The 5 AM Club by Robin Sharma', price: 299, originalPrice: 499, rating: 4.3, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/71g2ednj0JL._AC_SL1500_.jpg', search: '5+am+club+book', badge: 'bestseller'},
-            {category: 'Books', brand: 'Penguin', title: 'The Power of Your Subconscious Mind', price: 149, originalPrice: 250, rating: 4.4, reviews: 67890, image: 'https://images-na.ssl-images-amazon.com/images/I/81YkqyaFVEL._AC_SL1500_.jpg', search: 'power+of+subconscious+mind+book', badge: 'deal'},
+      <!-- Home & Kitchen -->
+      <div class="product-card" data-category="home" data-title="Milton Aura 1000 Thermosteel Water Bottle">
+        <img src="https://via.placeholder.com/400x300?text=Milton+Thermosteel+Bottle" alt="Milton Thermosteel Aura 1000 Bottle" />
+        <div class="product-title">
+          Milton Aura 1000 Thermosteel Water Bottle 1000 ml – Hot &amp; Cold, Leak Proof
+        </div>
+        <div class="rating">⭐⭐⭐⭐⭐ (4.4+)</div>
+        <div class="price">₹700–₹1,100</div>
+        <span class="tag">Daily use • Home</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Milton-Thermosteel-Bottle-Kitchen-Trekking/dp/B0B4RX7ZXK?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
 
-            // Sports
-            {category: 'Sports', brand: 'Nivia', title: 'Nivia Storm Football - Size: 5', price: 599, originalPrice: 1199, rating: 4.2, reviews: 12345, image: 'https://images-na.ssl-images-amazon.com/images/I/71VncILnH9L._AC_SL1500_.jpg', search: 'nivia+storm+football', badge: 'bestseller'},
-            {category: 'Sports', brand: 'Yonex', title: 'Yonex Mavis 350 Nylon Shuttle - Pack of 6', price: 699, originalPrice: 1200, rating: 4.4, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_SL1500_.jpg', search: 'yonex+mavis+350+shuttle', badge: 'deal'},
-            {category: 'Sports', brand: 'Strauss', title: 'Strauss Yoga Mat, 6mm (Blue)', price: 599, originalPrice: 1199, rating: 4.1, reviews: 34567, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_SL1500_.jpg', search: 'strauss+yoga+mat+6mm', badge: 'bestseller'},
-            {category: 'Sports', brand: 'Kore', title: 'Kore PVC-DM Combo 16 Home Gym and Fitness Kit', price: 2999, originalPrice: 5999, rating: 4.2, reviews: 12345, image: 'https://images-na.ssl-images-amazon.com/images/I/61pglWl7oYL._AC_SL1500_.jpg', search: 'kore+home+gym+kit', badge: ''},
-            {category: 'Sports', brand: 'Boldfit', title: 'Boldfit Gym Shaker Bottle 500ml', price: 299, originalPrice: 599, rating: 4.3, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/61pglWl7oYL._AC_SL1500_.jpg', search: 'boldfit+shaker+bottle', badge: 'deal'},
-            {category: 'Sports', brand: 'Cosco', title: 'Cosco Hi-Grip Volleyball', price: 499, originalPrice: 999, rating: 4.0, reviews: 12345, image: 'https://images-na.ssl-images-amazon.com/images/I/71VncILnH9L._AC_SL1500_.jpg', search: 'cosco+volleyball', badge: 'bestseller'},
-            {category: 'Sports', brand: 'Nivia', title: 'Nivia Encounter Basketball - Size: 7', price: 799, originalPrice: 1599, rating: 4.2, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_SL1500_.jpg', search: 'nivia+basketball', badge: ''},
-            {category: 'Sports', brand: 'Strauss', title: 'Strauss Adjustable Hand Grip Strengthener', price: 199, originalPrice: 399, rating: 4.1, reviews: 12345, image: 'https://images-na.ssl-images-amazon.com/images/I/71VncILnH9L._AC_SL1500_.jpg', search: 'strauss+hand+grip', badge: 'deal'},
-            {category: 'Sports', brand: 'Boldfit', title: 'Boldfit Resistance Bands Set of 5', price: 499, originalPrice: 999, rating: 4.3, reviews: 23456, image: 'https://images-na.ssl-images-amazon.com/images/I/71VncILnH9L._AC_SL1500_.jpg', search: 'boldfit+resistance+bands', badge: 'bestseller'},
-            {category: 'Sports', brand: 'Nivia', title: 'Nivia Ashtang Yoga Mat with Carry Bag', price: 799, originalPrice: 1599, rating: 4.2, reviews: 12345, image: 'https://images-na.ssl-images-amazon.com/images/I/71xWkJIw7LL._AC_SL1500_.jpg', search: 'nivia+yoga+mat', badge: ''}
-        ];
+      <div class="product-card" data-category="home" data-title="HUESLAND by Ahmedabad Cotton Double Bedsheet">
+        <img src="https://via.placeholder.com/400x300?text=Double+Bedsheet" alt="Double Bedsheet with 2 Pillow Covers" />
+        <div class="product-title">
+          HUESLAND by Ahmedabad Cotton 144 TC Double Bedsheet with 2 Pillow Covers
+        </div>
+        <div class="rating">⭐⭐⭐⭐☆ (4.0+)</div>
+        <div class="price">₹600–₹1,000</div>
+        <span class="tag">Best value • Home</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Ahmedabad-Cotton-Double-Bedsheet-Pillow/dp/B07CN7NJQS?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
 
-        let filteredProducts = [...products];
+      <!-- Books -->
+      <div class="product-card" data-category="books" data-title="The Psychology of Money Book">
+        <img src="https://via.placeholder.com/400x300?text=The+Psychology+of+Money" alt="The Psychology of Money Book" />
+        <div class="product-title">
+          The Psychology of Money – Morgan Housel (Paperback)
+        </div>
+        <div class="rating">⭐⭐⭐⭐⭐ (4.5+)</div>
+        <div class="price">₹250–₹400</div>
+        <span class="tag">Bestseller • Books</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Psychology-Money-Morgan-Housel/dp/9390166268?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
 
-        function getStars(rating) {
-            const full = Math.floor(rating);
-            const half = rating % 1 >= 0.5 ? 1 : 0;
-            const empty = 5 - full - half;
-            return '⭐'.repeat(full) + (half ? '⭐' : '') + '☆'.repeat(empty);
-        }
+      <div class="product-card" data-category="books" data-title="Atomic Habits Book by James Clear">
+        <img src="https://via.placeholder.com/400x300?text=Atomic+Habits" alt="Atomic Habits Book" />
+        <div class="product-title">
+          Atomic Habits by James Clear (Paperback)
+        </div>
+        <div class="rating">⭐⭐⭐⭐⭐ (4.6+)</div>
+        <div class="price">₹250–₹500</div>
+        <span class="tag">Top rated • Books</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Atomic-Habits-James-Clear/dp/B0FFDB7JZ5?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
 
-        function getDiscount(price, originalPrice) {
-            return Math.round(((originalPrice - price) / originalPrice) * 100);
-        }
+      <!-- Sports & Fitness -->
+      <div class="product-card" data-category="sports" data-title="Spirit Yoga TPE 6mm Yoga Mat">
+        <img src="https://via.placeholder.com/400x300?text=Yoga+Mat+6mm" alt="Spirit Yoga 6mm TPE Yoga Mat" />
+        <div class="product-title">
+          Spirit Yoga TPE 6mm Anti-Skid Yoga Mat with Carry Bag &amp; Strap
+        </div>
+        <div class="rating">⭐⭐⭐⭐☆ (4.0+)</div>
+        <div class="price">₹500–₹900</div>
+        <span class="tag">Fitness • Sports</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Spirit-Yoga-Lightweight-Sweat-Proof-Dirt-Resistant/dp/B0FPWQM7ZZ?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
 
-        function createProductCard(product) {
-            // Using Amazon search URL instead of direct product link
-            const amazonUrl = `https://www.amazon.in/s?k=${product.search}&tag=${associateId}`;
-            const discount = getDiscount(product.price, product.originalPrice);
-            const badgeHTML = product.badge ? `<span class="badge ${product.badge}">${product.badge === 'bestseller' ? 'Best Seller' : product.badge === 'deal' ? 'Limited time deal' : 'Limited'}</span>` : '';
-            
-            return `
-                <div class="product-card">
-                    ${badgeHTML}
-                    <div class="product-image">
-                        <img src="${product.image}" alt="${product.title}" loading="lazy" onerror="this.src='https://via.placeholder.com/250x250/f0f0f0/666666?text=Product+Image'">
-                    </div>
-                    <div class="sponsored">Sponsored</div>
-                    <a href="${amazonUrl}" target="_blank" rel="noopener" style="text-decoration: none; color: inherit;">
-                        <div class="product-title">${product.title}</div>
-                    </a>
-                    <div class="rating">
-                        <span class="stars">${getStars(product.rating)}</span>
-                        <span class="rating-count">${product.reviews.toLocaleString()}</span>
-                    </div>
-                    <div class="price-section">
-                        <span class="price">
-                            <span class="price-symbol">₹</span>${Math.floor(product.price)}
-                        </span>
-                        <span class="original-price">M.R.P.: ₹${product.originalPrice.toLocaleString()}</span>
-                        <span class="discount">(${discount}% off)</span>
-                    </div>
-                    <div class="prime">prime</div>
-                    <div class="delivery">FREE Delivery by Amazon</div>
-                    <a href="${amazonUrl}" target="_blank" rel="noopener" class="buy-button">View on Amazon</a>
-                </div>
-            `;
-        }
+      <div class="product-card" data-category="sports" data-title="Digital Sports Watch for Men Waterproof">
+        <img src="https://via.placeholder.com/400x300?text=Digital+Sports+Watch" alt="Digital Sports Watch for Men" />
+        <div class="product-title">
+          Digital Sports Watch for Men Boys – Waterproof LED Display
+        </div>
+        <div class="rating">⭐⭐⭐⭐☆ (3.8+)</div>
+        <div class="price">₹180–₹400</div>
+        <span class="tag">Value buy • Sports</span>
+        <a
+          class="btn"
+          href="https://www.amazon.in/Digital-Sports-Watch-Boys-Multifunctional/dp/B0FT44NJV8?tag=vashustore0b-21"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on Amazon</a>
+      </div>
+    </div>
+  </main>
 
-        function renderProducts() {
-            const grid = document.getElementById('productsGrid');
-            grid.innerHTML = filteredProducts.map(createProductCard).join('');
-            document.getElementById('resultCount').textContent = filteredProducts.length;
-        }
+  <footer>
+    <div>© <span id="year"></span> Vashu Store – Amazon Affiliate Store</div>
+    <div class="disclaimer">
+      As an Amazon Associate I earn from qualifying purchases. Product prices and availability are subject to change.
+      Please check the product page on Amazon for the latest details.
+    </div>
+  </footer>
 
-        function applyFilters() {
-            let result = [...products];
+  <script>
+    const searchInput = document.getElementById("searchInput");
+    const productGrid = document.getElementById("productGrid");
+    const cards = productGrid.querySelectorAll(".product-card");
 
-            const selectedCategories = Array.from(document.querySelectorAll('.filter-section input[type="checkbox"]'))
-                .filter(cb => cb.checked && ['Electronics', 'Fashion', 'Home', 'Books', 'Sports'].includes(cb.value))
-                .map(cb => cb.value);
-            if (selectedCategories.length > 0) {
-                result = result.filter(p => selectedCategories.includes(p.category));
-            }
+    function setCategory(category, btn) {
+      document.querySelectorAll(".category-tab").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      applyFilters();
+    }
 
-            const selectedRatings = Array.from(document.querySelectorAll('.filter-section input[id^="rating-"]'))
-                .filter(cb => cb.checked)
-                .map(cb => parseFloat(cb.value));
-            if (selectedRatings.length > 0) {
-                const minRating = Math.min(...selectedRatings);
-                result = result.filter(p => p.rating >= minRating);
-            }
+    function applyFilters() {
+      const activeTab = document.querySelector(".category-tab.active");
+      const activeCategory = activeTab ? activeTab.dataset.category : "all";
+      const query = searchInput.value.toLowerCase().trim();
 
-            const selectedPriceRanges = Array.from(document.querySelectorAll('.filter-section input[type="checkbox"]'))
-                .filter(cb => cb.checked && cb.value.includes('-'))
-                .map(cb => cb.value);
-            if (selectedPriceRanges.length > 0) {
-                result = result.filter(p => {
-                    return selectedPriceRanges.some(range => {
-                        const [min, max] = range.split('-').map(Number);
-                        return p.price >= min && p.price <= max;
-                    });
-                });
-            }
+      cards.forEach((card) => {
+        const cardCategory = card.dataset.category;
+        const title = card.dataset.title.toLowerCase();
 
-            const minPrice = document.getElementById('minPrice').value;
-            const maxPrice = document.getElementById('maxPrice').value;
-            if (minPrice) result = result.filter(p => p.price >= parseInt(minPrice));
-            if (maxPrice) result = result.filter(p => p.price <= parseInt(maxPrice));
+        const matchCategory = activeCategory === "all" || activeCategory === cardCategory;
+        const matchSearch = query === "" || title.includes(query);
 
-            filteredProducts = result;
-            sortProducts();
-        }
+        card.style.display = matchCategory && matchSearch ? "flex" : "none";
+      });
+    }
 
-        function sortProducts() {
-            const sortValue = document.getElementById('sortSelect').value;
-            
-            switch(sortValue) {
-                case 'price-low':
-                    filteredProducts.sort((a, b) => a.price - b.price);
-                    break;
-                case 'price-high':
-                    filteredProducts.sort((a, b) => b.price - a.price);
-                    break;
-                case 'rating':
-                    filteredProducts.sort((a, b) => b.rating - a.rating);
-                    break;
-                default:
-                    filteredProducts.sort((a, b) => b.reviews - a.reviews);
-            }
-            
-            renderProducts();
-        }
-
-        function handleSearch() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const categoryFilter = document.getElementById('categorySelect').value;
-            
-            let result = [...products];
-            
-            if (categoryFilter) {
-                result = result.filter(p => p.category === categoryFilter);
-            }
-            
-            if (searchTerm) {
-                result = result.filter(p => 
-                    p.title.toLowerCase().includes(searchTerm) || 
-                    p.brand.toLowerCase().includes(searchTerm) ||
-                    p.category.toLowerCase().includes(searchTerm)
-                );
-            }
-            
-            filteredProducts = result;
-            renderProducts();
-        }
-
-        function filterByCategory(category) {
-            if (category === 'all') {
-                filteredProducts = [...products];
-            } else {
-                filteredProducts = products.filter(p => p.category === category);
-            }
-            renderProducts();
-        }
-
-        function clearFilters() {
-            document.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-            document.getElementById('minPrice').value = '';
-            document.getElementById('maxPrice').value = '';
-            document.getElementById('searchInput').value = '';
-            document.getElementById('categorySelect').value = '';
-            filteredProducts = [...products];
-            renderProducts();
-        }
-
-        renderProducts();
-    </script>
+    searchInput.addEventListener("input", applyFilters);
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
